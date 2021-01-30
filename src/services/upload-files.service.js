@@ -1,4 +1,5 @@
 import http from "../http-common";
+import axios from "axios";
 
 class UploadFilesService {
   upload(file, onUploadProgress) {
@@ -6,7 +7,7 @@ class UploadFilesService {
 
     formData.append("file", file);
 
-    return http.post('/dev',formData, {
+    return axios.post('https://bot9p1l589.execute-api.us-east-2.amazonaws.com/dev/upload',formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
