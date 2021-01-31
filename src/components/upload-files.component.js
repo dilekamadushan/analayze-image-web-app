@@ -42,8 +42,9 @@ export default class UploadFiles extends Component {
       });
     })
       .then((response) => {
+        //  alert(JSON.stringify(response));
         this.setState((prev) => {
-          let nextMessage = [...prev.message, "Uploaded the file successfully: " + file.name];
+          let nextMessage = [...prev.message, "Uploaded the file successfully: " + file.name+" "+ response.data.message.status];
           return {
             message: nextMessage
           };
